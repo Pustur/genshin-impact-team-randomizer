@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A web app to randomize your Genshin Impact team based on the characters that you own",
   "scripts": {
+    "format": "prettier --write .",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
