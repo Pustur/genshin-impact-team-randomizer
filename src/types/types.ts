@@ -12,6 +12,6 @@ export interface GenshinCharacter {
   shortName: string;
   stars: 4 | 5;
   elements: GenshinElement[];
-  checked: boolean;
+  selected: boolean;
   collab: boolean;
 }

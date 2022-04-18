@@ -19,7 +19,9 @@
   --color-collab-end: #a62a3a;
   --color-empty-start: #565860;
   --color-empty-end: #75787e;
-  --color-card-bg: var(--color-bg);
+  --color-card-start: var(--color-empty-start);
+  --color-card-end: var(--color-empty-end);
+  --color-card-fg: #363f50;
 
   --color-anemo: #74c2a8;
   --color-cryo: #9fd6e3;
@@ -30,6 +32,7 @@
   --color-pyro: #ef7938;
 
   --size-border-radius: 6px;
+  --size-grid-gap: 10px;
   --size-element: 12px;
   --size-font: 10px;
   --size-card-min-width: 64px;
@@ -93,4 +96,14 @@ html {
 
 body {
   margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
 }

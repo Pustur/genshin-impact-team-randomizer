@@ -6,7 +6,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Itto',
     stars: 5,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -14,7 +14,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Albedo',
     stars: 5,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -22,7 +22,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Aloy',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: true,
   },
   {
@@ -30,7 +30,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Amber',
     stars: 4,
     elements: ['pyro'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -38,7 +38,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Barbara',
     stars: 4,
     elements: ['hydro'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -46,7 +46,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Beidou',
     stars: 4,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -54,7 +54,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Bennett',
     stars: 4,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -62,7 +62,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Chongyun',
     stars: 4,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -70,7 +70,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Diluc',
     stars: 5,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -78,7 +78,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Diona',
     stars: 4,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -86,7 +86,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Eula',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -94,7 +94,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Fischl',
     stars: 4,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -102,7 +102,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Ganyu',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -110,7 +110,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Gorou',
     stars: 4,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -118,7 +118,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Hu Tao',
     stars: 5,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -126,7 +126,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Jean',
     stars: 5,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -134,7 +134,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Kazuha',
     stars: 5,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -142,7 +142,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Kaeya',
     stars: 4,
     elements: ['cryo'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -150,7 +150,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Ayaka',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -158,7 +158,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Ayato',
     stars: 5,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -166,7 +166,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Keqing',
     stars: 5,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -174,7 +174,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Klee',
     stars: 5,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -182,7 +182,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Sara',
     stars: 4,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -190,7 +190,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Shinobu',
     stars: 4,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -198,7 +198,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Lisa',
     stars: 4,
     elements: ['electro'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -206,7 +206,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Mona',
     stars: 5,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -214,7 +214,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Ningguang',
     stars: 4,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -222,7 +222,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Noelle',
     stars: 4,
     elements: ['geo'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -230,7 +230,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Qiqi',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -238,7 +238,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Raiden',
     stars: 5,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -246,7 +246,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Razor',
     stars: 4,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -254,7 +254,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Rosaria',
     stars: 4,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -262,7 +262,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Kokomi',
     stars: 5,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -270,7 +270,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Sayu',
     stars: 4,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -278,7 +278,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Shenhe',
     stars: 5,
     elements: ['cryo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -286,7 +286,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Sucrose',
     stars: 4,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -294,7 +294,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Tartaglia',
     stars: 5,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -302,7 +302,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Thoma',
     stars: 4,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -310,7 +310,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Traveler',
     stars: 5,
     elements: ['anemo', 'geo', 'electro'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -318,7 +318,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Venti',
     stars: 5,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -326,7 +326,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Xiangling',
     stars: 4,
     elements: ['pyro'],
-    checked: true,
+    selected: true,
     collab: false,
   },
   {
@@ -334,7 +334,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Xiao',
     stars: 5,
     elements: ['anemo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -342,7 +342,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Xingqiu',
     stars: 4,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -350,7 +350,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Xinyan',
     stars: 4,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -358,7 +358,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Yae',
     stars: 5,
     elements: ['electro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -366,7 +366,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Yanfei',
     stars: 4,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -374,7 +374,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Yelan',
     stars: 5,
     elements: ['hydro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -382,7 +382,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Yoimiya',
     stars: 5,
     elements: ['pyro'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -390,7 +390,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Yun Jin',
     stars: 4,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
   {
@@ -398,7 +398,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Zhongli',
     stars: 5,
     elements: ['geo'],
-    checked: false,
+    selected: false,
     collab: false,
   },
 ];
