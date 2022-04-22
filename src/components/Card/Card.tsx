@@ -14,20 +14,26 @@ type IDisplayCard = ICard & Required<Pick<ICard, 'character'>>;
 
 type IInteractiveCard = Required<ICard>;
 
+const ShellCard: Component = props => {
+  return (
+    <div class={`${styles.card} ${styles.selected}`}>{props.children}</div>
+  );
+};
+
 const EmptyCard: Component = () => {
   return (
-    <div class={`${styles.card} ${styles.selected}`}>
+    <>
       <div class={styles.imageHolder}>
         <img class={styles.emptyImage} src="/img/icons/empty.svg" alt="" />
       </div>
       <div class={styles.name}>--</div>
-    </div>
+    </>
   );
 };
 
 const DisplayCard: Component<IDisplayCard> = props => {
   return (
-    <div class={`${styles.card} ${styles.selected}`}>
+    <>
       <div
         class={styles.imageHolder}
         classList={{
@@ -52,7 +58,7 @@ const DisplayCard: Component<IDisplayCard> = props => {
         ))}
       </div>
       <div class={styles.name}>{props.character.fullName}</div>
-    </div>
+    </>
   );
 };
 
@@ -94,8 +100,20 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
 };
 
 const Card: Component<ICard> = props => {
-  if (!props.character) return <EmptyCard />;
-  if (!props.onClick) return <DisplayCard character={props.character} />;
+  if (!props.character) {
+    return (
+      <ShellCard>
+        <EmptyCard />
+      </ShellCard>
+    );
+  }
+  if (!props.onClick) {
+    return (
+      <ShellCard>
+        <DisplayCard character={props.character} />
+      </ShellCard>
+    );
+  }
   return (
     <InteractiveCard onClick={props.onClick} character={props.character} />
   );
