@@ -1,11 +1,11 @@
-import { Component, For } from 'solid-js';
+import { Component, createMemo, createSignal, For } from 'solid-js';
 import styles from './App.module.css';
 
 import { Card } from '../Card';
 import { characters } from '../../data/characters';
-import { setState } from '../../data/store';
+import { state, setState } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
-import { toggleSet } from '../../utils/utils';
+import { shuffle, toggleSet } from '../../utils/utils';
 
 const toggleSelected = (id: GenshinCharacter['id']) => {
   setState(state => ({
@@ -14,22 +14,38 @@ const toggleSelected = (id: GenshinCharacter['id']) => {
   }));
 };
 
+const idToCard = (id: GenshinCharacter['id']) => (
+  <Card character={characters.find(c => c.id === id)} />
+);
+
 const App: Component = () => {
+  const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
+  const team1 = createMemo(() =>
+    Array.from({ length: 4 }, (_, i) => teams()[i]),
+  );
+  const team2 = createMemo(() =>
+    Array.from({ length: 4 }, (_, i) => teams()[i + 4]),
+  );
+
   return (
     <>
       <div class={styles.teams}>
         <div class={`${styles.grid} ${styles.team}`}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {team1().map(idToCard)}
         </div>
         <div class={`${styles.grid} ${styles.team}`}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {team2().map(idToCard)}
         </div>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            const rnd = shuffle(Array.from(state.selectedCharacters));
+            setTeams(() => rnd.slice(0, 8));
+          }}
+        >
+          Generate teams
+        </button>
       </div>
       <div class={styles.grid}>
         <For each={characters}>
