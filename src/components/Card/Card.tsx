@@ -8,19 +8,23 @@ import { state } from '../../data/store';
 
 interface ICard extends Pick<JSX.DOMAttributes<HTMLButtonElement>, 'onClick'> {
   character?: DeepReadonly<GenshinCharacter>;
+  index?: number;
 }
+
+type IShellCard = Pick<ICard, 'index'>;
 
 type IDisplayCard = ICard & Required<Pick<ICard, 'character'>>;
 
-type IInteractiveCard = Required<ICard>;
+type IInteractiveCard = Required<Pick<ICard, 'character' | 'onClick'>>;
 
-const ShellCard: Component = props => {
+const ShellCard: Component<IShellCard> = props => {
   const [isMounted, setIsMounted] = createSignal(false);
 
   onMount(() => requestAnimationFrame(() => setIsMounted(true)));
 
   return (
     <div
+      style={{ '--card-transition-delay': `${(props.index ?? 0) * 100}ms` }}
       class={`${styles.card} ${styles.selected} ${styles.transition}`}
       classList={{
         [styles.animate]: isMounted(),
@@ -113,14 +117,14 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
 const Card: Component<ICard> = props => {
   if (!props.character) {
     return (
-      <ShellCard>
+      <ShellCard index={props.index}>
         <EmptyCard />
       </ShellCard>
     );
   }
   if (!props.onClick) {
     return (
-      <ShellCard>
+      <ShellCard index={props.index}>
         <DisplayCard character={props.character} />
       </ShellCard>
     );

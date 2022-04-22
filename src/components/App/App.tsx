@@ -14,9 +14,15 @@ const toggleSelected = (id: GenshinCharacter['id']) => {
   }));
 };
 
-const idToCard = (id: GenshinCharacter['id']) => (
-  <Card character={characters.find(c => c.id === id)} />
-);
+const idToCard =
+  (offset: number = 0) =>
+  (id: GenshinCharacter['id'], index: number) =>
+    (
+      <Card
+        index={index + offset}
+        character={characters.find(c => c.id === id)}
+      />
+    );
 
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
@@ -31,10 +37,10 @@ const App: Component = () => {
     <>
       <div class={styles.teams}>
         <div class={`${styles.grid} ${styles.team}`}>
-          {team1().map(idToCard)}
+          {team1().map(idToCard())}
         </div>
         <div class={`${styles.grid} ${styles.team}`}>
-          {team2().map(idToCard)}
+          {team2().map(idToCard(4))}
         </div>
       </div>
       <div>
