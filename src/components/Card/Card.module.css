@@ -17,6 +17,20 @@
   opacity: 1;
 }
 
+.card.transition {
+  transition-property: opacity, transform;
+  transition-delay: var(--card-transition-delay, 0);
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transform: scale(1.5) translateY(40px);
+  opacity: 0;
+}
+
+.card.transition.animate {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
 .imageHolder {
   aspect-ratio: 1;
   position: relative;

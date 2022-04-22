@@ -1,4 +1,4 @@
-import { Component, JSX } from 'solid-js';
+import { Component, createSignal, JSX, onMount } from 'solid-js';
 import { DeepReadonly } from 'solid-js/store';
 
 import styles from './Card.module.css';
@@ -15,8 +15,19 @@ type IDisplayCard = ICard & Required<Pick<ICard, 'character'>>;
 type IInteractiveCard = Required<ICard>;
 
 const ShellCard: Component = props => {
+  const [isMounted, setIsMounted] = createSignal(false);
+
+  onMount(() => requestAnimationFrame(() => setIsMounted(true)));
+
   return (
-    <div class={`${styles.card} ${styles.selected}`}>{props.children}</div>
+    <div
+      class={`${styles.card} ${styles.selected} ${styles.transition}`}
+      classList={{
+        [styles.animate]: isMounted(),
+      }}
+    >
+      {props.children}
+    </div>
   );
 };
 
