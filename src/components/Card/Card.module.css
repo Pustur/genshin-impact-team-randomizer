@@ -58,6 +58,8 @@
   position: absolute;
   inset: 0 auto auto 0;
   padding: 0.125em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .element {

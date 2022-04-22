@@ -101,6 +101,8 @@ body {
 img {
   display: block;
   max-width: 100%;
+  pointer-events: none;
+  user-select: none;
 }
 
 button {
