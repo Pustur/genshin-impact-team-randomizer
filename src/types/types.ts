@@ -8,6 +8,7 @@ export type GenshinElement =
   | 'pyro';
 
 export interface GenshinCharacter {
+  id: number;
   fullName: string;
   shortName: string;
   stars: 4 | 5;

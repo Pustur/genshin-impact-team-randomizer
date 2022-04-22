@@ -5,10 +5,10 @@ import { Card } from '../Card';
 import { setState, state } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
 
-const toggleSelected = (fullName: GenshinCharacter['fullName']) => {
+const toggleSelected = (id: GenshinCharacter['id']) => {
   setState(
     'characters',
-    character => character.fullName === fullName,
+    character => character.id === id,
     'selected',
     selected => !selected,
   );
@@ -35,7 +35,7 @@ const App: Component = () => {
         <For each={state.characters}>
           {character => (
             <Card
-              onClick={[toggleSelected, character.fullName]}
+              onClick={[toggleSelected, character.id]}
               character={character}
             />
           )}
