@@ -4,6 +4,7 @@ import { DeepReadonly } from 'solid-js/store';
 import styles from './Card.module.css';
 import { slugify } from '../../utils/utils';
 import { GenshinCharacter } from '../../types/types';
+import { state } from '../../data/store';
 
 interface CardProps
   extends Pick<JSX.DOMAttributes<HTMLButtonElement>, 'onClick'> {
@@ -26,7 +27,7 @@ const Card: Component<CardProps> = props => {
     <button
       class={styles.card}
       classList={{
-        [styles.selected]: props.character.selected,
+        [styles.selected]: state.selectedCharacters.has(props.character.id),
       }}
       onClick={props.onClick}
     >

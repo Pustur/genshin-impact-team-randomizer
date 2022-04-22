@@ -2,16 +2,16 @@ import { Component, For } from 'solid-js';
 import styles from './App.module.css';
 
 import { Card } from '../Card';
-import { setState, state } from '../../data/store';
+import { characters } from '../../data/characters';
+import { setState } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
+import { toggleSet } from '../../utils/utils';
 
 const toggleSelected = (id: GenshinCharacter['id']) => {
-  setState(
-    'characters',
-    character => character.id === id,
-    'selected',
-    selected => !selected,
-  );
+  setState(state => ({
+    ...state,
+    selectedCharacters: toggleSet(state.selectedCharacters, id),
+  }));
 };
 
 const App: Component = () => {
@@ -32,7 +32,7 @@ const App: Component = () => {
         </div>
       </div>
       <div class={styles.grid}>
-        <For each={state.characters}>
+        <For each={characters}>
           {character => (
             <Card
               onClick={[toggleSelected, character.id]}
