@@ -6,10 +6,11 @@ import { slugify } from '../../utils/utils';
 import { GenshinCharacter } from '../../types/types';
 import { state } from '../../data/store';
 
-interface CardProps
-  extends Pick<JSX.DOMAttributes<HTMLButtonElement>, 'onClick'> {
+interface ICard extends Pick<JSX.DOMAttributes<HTMLButtonElement>, 'onClick'> {
   character?: DeepReadonly<GenshinCharacter>;
 }
+
+type IInteractiveCard = Required<ICard>;
 
 const EmptyCard: Component = () => {
   return (
@@ -22,9 +23,7 @@ const EmptyCard: Component = () => {
   );
 };
 
-const Card: Component<CardProps> = props => {
-  if (!props.character) return <EmptyCard />;
-
+const InteractiveCard: Component<IInteractiveCard> = props => {
   return (
     <button
       class={styles.card}
@@ -48,7 +47,7 @@ const Card: Component<CardProps> = props => {
         />
       </div>
       <div class={styles.elementsContainer}>
-        {props.character.elements?.map(element => (
+        {props.character.elements.map(element => (
           <img
             class={styles.element}
             src={`/img/elements/${element}.svg`}
@@ -59,6 +58,15 @@ const Card: Component<CardProps> = props => {
       <div class={styles.name}>{props.character.fullName}</div>
     </button>
   );
+};
+
+const Card: Component<ICard> = props => {
+  if (!props.character) return <EmptyCard />;
+  if (props.onClick) {
+    return (
+      <InteractiveCard onClick={props.onClick} character={props.character} />
+    );
+  }
 };
 
 export { Card };
