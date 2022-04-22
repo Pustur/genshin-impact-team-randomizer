@@ -19,16 +19,16 @@ const App: Component = () => {
     <>
       <div class={styles.teams}>
         <div class={`${styles.grid} ${styles.team}`}>
-          <Card>--</Card>
-          <Card>--</Card>
-          <Card>--</Card>
-          <Card>--</Card>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
         <div class={`${styles.grid} ${styles.team}`}>
-          <Card>--</Card>
-          <Card>--</Card>
-          <Card>--</Card>
-          <Card>--</Card>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
       <div class={styles.grid}>

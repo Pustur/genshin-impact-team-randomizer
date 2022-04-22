@@ -11,17 +11,19 @@ interface CardProps
   character?: DeepReadonly<GenshinCharacter>;
 }
 
-const Card: Component<CardProps> = props => {
-  if (!props.character) {
-    return (
-      <div class={`${styles.card} ${styles.selected}`}>
-        <div class={styles.imageHolder}>
-          <img class={styles.emptyImage} src="/img/icons/empty.svg" alt="" />
-        </div>
-        <div class={styles.name}>{props.children}</div>
+const EmptyCard: Component = () => {
+  return (
+    <div class={`${styles.card} ${styles.selected}`}>
+      <div class={styles.imageHolder}>
+        <img class={styles.emptyImage} src="/img/icons/empty.svg" alt="" />
       </div>
-    );
-  }
+      <div class={styles.name}>--</div>
+    </div>
+  );
+};
+
+const Card: Component<CardProps> = props => {
+  if (!props.character) return <EmptyCard />;
 
   return (
     <button
