@@ -24,6 +24,7 @@
   transition-timing-function: ease;
   transform: scale(1.5) translateY(40px);
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 .card.transition.animate {
