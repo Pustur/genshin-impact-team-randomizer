@@ -3,10 +3,10 @@
   position: relative;
   padding: 0;
   border: 0;
-  border-radius: var(--size-border-radius);
+  border-radius: calc(var(--size-border-radius) + 2px);
   opacity: 0.4;
   color: var(--color-card-fg);
-  overflow: hidden;
+  background-color: white;
 }
 
 .card:focus-visible {
@@ -37,18 +37,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border-top-left-radius: var(--size-border-radius);
+  border-top-right-radius: var(--size-border-radius);
+  border-bottom-right-radius: 20px;
   background-image: url(/img/icons/card-bg.svg),
     linear-gradient(to bottom, var(--color-card-start), var(--color-card-end));
-}
-
-.imageHolder::after {
-  content: '';
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  inset: auto 0 -0.5px auto;
-  background-image: url(/img/icons/curve.svg);
 }
 
 .emptyImage {
@@ -116,6 +110,8 @@
   text-overflow: ellipsis;
   background-color: white;
   padding: 0.375em 1em;
+  border-bottom-left-radius: var(--size-border-radius);
+  border-bottom-right-radius: var(--size-border-radius);
 }
 
 .fiveStar {
