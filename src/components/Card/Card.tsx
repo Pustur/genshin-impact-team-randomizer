@@ -2,7 +2,7 @@ import { Component, createMemo, createSignal, JSX, onMount } from 'solid-js';
 import { DeepReadonly } from 'solid-js/store';
 
 import styles from './Card.module.css';
-import { shuffle, slugify } from '../../utils/utils';
+import { nextFrame, shuffle, slugify } from '../../utils/utils';
 import { GenshinCharacter } from '../../types/types';
 import { state } from '../../data/store';
 
@@ -20,7 +20,7 @@ type IInteractiveCard = Required<Pick<ICard, 'character' | 'onClick'>>;
 const ShellCard: Component<IShellCard> = props => {
   const [isMounted, setIsMounted] = createSignal(false);
 
-  onMount(() => requestAnimationFrame(() => setIsMounted(true)));
+  onMount(() => nextFrame(() => setIsMounted(true)));
 
   return (
     <div

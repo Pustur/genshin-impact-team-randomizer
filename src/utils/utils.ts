@@ -7,6 +7,10 @@ function toggleSet<T>(set: Set<T>, value: T): Set<T> {
   return new Set(set);
 }
 
+function nextFrame(fn: () => void) {
+  requestAnimationFrame(() => requestAnimationFrame(fn));
+}
+
 function shuffle<T>(array: T[]): T[] {
   let currentIndex = array.length;
   let randomIndex;
@@ -24,4 +28,4 @@ function shuffle<T>(array: T[]): T[] {
   return array;
 }
 
-export { slugify, toggleSet, shuffle };
+export { slugify, toggleSet, shuffle, nextFrame };
