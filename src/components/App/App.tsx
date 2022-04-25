@@ -1,4 +1,4 @@
-import { Component, createMemo, createSignal, For } from 'solid-js';
+import { Component, createSignal, For } from 'solid-js';
 import styles from './App.module.css';
 
 import { Card } from '../Card';
@@ -26,12 +26,8 @@ const idToCard =
 
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
-  const team1 = createMemo(() =>
-    Array.from({ length: 4 }, (_, i) => teams()[i]),
-  );
-  const team2 = createMemo(() =>
-    Array.from({ length: 4 }, (_, i) => teams()[i + 4]),
-  );
+  const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
+  const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
 
   return (
     <>
