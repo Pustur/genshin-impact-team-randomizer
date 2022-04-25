@@ -28,6 +28,10 @@ const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
   const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
   const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
+  const generateTeams = () => {
+    const rnd = shuffle(Array.from(state.selectedCharacters));
+    setTeams(() => rnd.slice(0, 8));
+  };
 
   return (
     <>
@@ -40,14 +44,7 @@ const App: Component = () => {
         </div>
       </div>
       <div>
-        <button
-          onClick={() => {
-            const rnd = shuffle(Array.from(state.selectedCharacters));
-            setTeams(() => rnd.slice(0, 8));
-          }}
-        >
-          Generate teams
-        </button>
+        <button onClick={generateTeams}>Generate teams</button>
       </div>
       <div class={styles.grid}>
         <For each={characters}>
