@@ -6,7 +6,8 @@ import { nextFrame, shuffle, slugify } from '../../utils/utils';
 import { GenshinCharacter } from '../../types/types';
 import { state } from '../../data/store';
 
-interface ICard extends Pick<JSX.DOMAttributes<HTMLButtonElement>, 'onClick'> {
+interface ICard {
+  onClick?: JSX.EventHandler<HTMLButtonElement, MouseEvent>;
   character?: DeepReadonly<GenshinCharacter>;
   index?: number;
 }
