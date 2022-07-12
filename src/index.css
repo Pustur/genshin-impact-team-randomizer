@@ -61,12 +61,12 @@
 
 ::-webkit-scrollbar-track {
   background-color: var(--color-bg-dark);
-  border-radius: 100vw;
+  border-radius: 100vmax;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-bg);
-  border-radius: 100vw;
+  border-radius: 100vmax;
   border: 3px solid var(--color-bg-dark);
 }
 
