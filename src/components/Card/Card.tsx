@@ -1,5 +1,10 @@
-import { Component, createSignal, JSX, onMount } from 'solid-js';
-import { DeepReadonly } from 'solid-js/store';
+import {
+  Component,
+  ParentComponent,
+  createSignal,
+  JSX,
+  onMount,
+} from 'solid-js';
 
 import styles from './Card.module.css';
 import { nextFrame, shuffle, slugify } from '../../utils/utils';
@@ -8,7 +13,7 @@ import { state } from '../../data/store';
 
 interface ICard {
   onClick?: JSX.EventHandler<HTMLButtonElement, MouseEvent>;
-  character?: DeepReadonly<GenshinCharacter>;
+  character?: GenshinCharacter;
   index?: number;
 }
 
@@ -18,7 +23,7 @@ type IDisplayCard = ICard & Required<Pick<ICard, 'character'>>;
 
 type IInteractiveCard = Required<Pick<ICard, 'character' | 'onClick'>>;
 
-const ShellCard: Component<IShellCard> = props => {
+const ShellCard: ParentComponent<IShellCard> = props => {
   const [isMounted, setIsMounted] = createSignal(false);
 
   onMount(() => nextFrame(() => setIsMounted(true)));
