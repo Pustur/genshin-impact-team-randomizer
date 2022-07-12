@@ -1,0 +1,12 @@
+.button {
+  background-color: var(--color-button-bg);
+  border: 2px solid var(--color-button-border);
+  color: var(--color-button-fg);
+  padding: 0.8em 1.4em;
+  border-radius: 100vmax;
+}
+
+.button:active {
+  background-color: var(--color-button-border);
+  border-color: var(--color-button-bg);
+}

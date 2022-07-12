@@ -10,7 +10,6 @@
   --color-fg: #b9c6df;
   --color-bg: #1a1f33;
   --color-bg-dark: #080c1b;
-  --color-borders: #30354d;
   --color-5-star-start: #83471b;
   --color-5-star-end: #ab5c10;
   --color-4-star-start: #4d4280;
@@ -22,6 +21,9 @@
   --color-card-start: var(--color-empty-start);
   --color-card-end: var(--color-empty-end);
   --color-card-fg: #363f50;
+  --color-button-fg: var(--color-card-fg);
+  --color-button-bg: white;
+  --color-button-border: #ede5d8;
 
   --color-anemo: #74c2a8;
   --color-cryo: #9fd6e3;

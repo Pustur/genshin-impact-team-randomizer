@@ -2,6 +2,7 @@ import { Component, createSignal, For } from 'solid-js';
 import styles from './App.module.css';
 
 import { Card } from '../Card';
+import { Button } from '../Button';
 import { characters } from '../../data/characters';
 import { state, setState } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
@@ -37,7 +38,7 @@ const App: Component = () => {
         </div>
       </div>
       <div>
-        <button onClick={generateTeams}>Generate teams</button>
+        <Button onClick={generateTeams}>Generate teams</Button>
       </div>
       <div class={styles.grid}>
         <For each={characters}>
