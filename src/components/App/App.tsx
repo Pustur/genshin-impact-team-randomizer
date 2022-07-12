@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { characters } from '../../data/characters';
 import { state, setState } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
-import { shuffle, toggleSet } from '../../utils/utils';
+import { shuffle } from '../../utils/utils';
 
 const idToCard =
   (offset: number = 0) =>
@@ -45,13 +45,25 @@ const App: Component = () => {
           {character => (
             <Card
               onClick={() => {
-                setState(state => ({
-                  ...state,
-                  selectedCharacters: toggleSet(
-                    state.selectedCharacters,
-                    character.id,
-                  ),
-                }));
+                setState(state => {
+                  if (state.selectedCharacters.includes(character.id)) {
+                    return {
+                      ...state,
+                      selectedCharacters: [
+                        ...state.selectedCharacters.filter(
+                          selected => selected !== character.id,
+                        ),
+                      ],
+                    };
+                  }
+                  return {
+                    ...state,
+                    selectedCharacters: [
+                      ...state.selectedCharacters,
+                      character.id,
+                    ],
+                  };
+                });
               }}
               character={character}
             />

@@ -93,7 +93,9 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
     <button
       class={styles.card}
       classList={{
-        [styles.selected]: state.selectedCharacters.has(props.character.id),
+        [styles.selected]: state.selectedCharacters.includes(
+          props.character.id,
+        ),
       }}
       onClick={props.onClick}
     >

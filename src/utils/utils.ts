@@ -2,11 +2,6 @@ function slugify(str: string): string {
   return str.toLowerCase().replace(/\s+/g, '-');
 }
 
-function toggleSet<T>(set: Set<T>, value: T): Set<T> {
-  set.delete(value) || set.add(value);
-  return new Set(set);
-}
-
 function nextFrame(fn: () => void) {
   requestAnimationFrame(() => requestAnimationFrame(fn));
 }
@@ -28,4 +23,4 @@ function shuffle<T>(array: T[]): T[] {
   return array;
 }
 
-export { slugify, toggleSet, shuffle, nextFrame };
+export { slugify, shuffle, nextFrame };
