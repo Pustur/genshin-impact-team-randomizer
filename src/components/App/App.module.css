@@ -1,9 +1,19 @@
+.buttons,
+.mainGrid {
+  margin-top: 1rem;
+}
+
 .teams {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
 }
 
 .grid {

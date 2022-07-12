@@ -37,10 +37,10 @@ const App: Component = () => {
           {team2().map(idToCard(4))}
         </div>
       </div>
-      <div>
+      <div class={styles.buttons}>
         <Button onClick={generateTeams}>Generate teams</Button>
       </div>
-      <div class={styles.grid}>
+      <div class={`${styles.grid} ${styles.mainGrid}`}>
         <For each={characters}>
           {character => (
             <Card
