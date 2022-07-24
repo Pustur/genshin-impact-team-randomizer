@@ -18,5 +18,17 @@
   },
   "dependencies": {
     "solid-js": "1.4.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pustur/genshin-impact-team-randomizer.git"
+  },
+  "author": {
+    "name": "Loris Bettazza",
+    "email": "loris.bettazza@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Pustur/genshin-impact-team-randomizer/issues"
+  },
+  "homepage": "https://github.com/Pustur/genshin-impact-team-randomizer#readme"
 }
