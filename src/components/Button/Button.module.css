@@ -10,3 +10,8 @@
   background-color: var(--color-button-border);
   border-color: var(--color-button-bg);
 }
+
+.button:focus-visible {
+  outline: 2px solid var(--color-button-bg);
+  outline-offset: 3px;
+}
