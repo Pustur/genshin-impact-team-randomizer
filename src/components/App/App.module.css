@@ -3,6 +3,22 @@
   margin-top: 1rem;
 }
 
+.titleGrid {
+  display: grid;
+  grid-template-columns: calc(12px + 24px) 1fr calc(12px + 24px);
+  align-items: center;
+}
+
+.title {
+  grid-column: 2;
+  text-align: center;
+  font-weight: 400;
+}
+
+.githubIconPath {
+  fill: var(--color-fg);
+}
+
 .teams {
   display: flex;
   justify-content: center;
