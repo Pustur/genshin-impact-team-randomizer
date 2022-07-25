@@ -5,7 +5,7 @@
 ## Usage
 
 Click on the character icons to select / remove them from the pool of selectable options.  
-The selection is stored in locally so you don't need to re-enter all your characters on subsequent visits.
+The selection is stored locally so you don't need to re-enter all your characters on subsequent visits.
 
 Once your roster is set, hit the "Generate teams" button.
 
