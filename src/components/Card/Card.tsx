@@ -69,6 +69,7 @@ const DisplayCard: Component<IDisplayCard> = props => {
           [styles.fiveStar]: props.character.stars === 5,
           [styles.collab]: props.character.collab,
         }}
+        title={props.character.fullName}
       >
         <img
           class={styles.characterImage}
@@ -98,6 +99,7 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
         ),
       }}
       onClick={props.onClick}
+      title={props.character.fullName}
     >
       <div
         class={styles.imageHolder}
