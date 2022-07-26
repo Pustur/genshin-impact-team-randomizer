@@ -24,6 +24,9 @@
   --color-button-fg: var(--color-card-fg);
   --color-button-bg: white;
   --color-button-border: #ede5d8;
+  --color-button-secondary-fg: white;
+  --color-button-secondary-bg: var(--color-button-fg);
+  --color-button-secondary-border: #545d6d;
 
   --color-anemo: #74c2a8;
   --color-cryo: #9fd6e3;
@@ -38,6 +41,7 @@
   --size-element: 12px;
   --size-font: 10px;
   --size-card-min-width: 64px;
+  --size-header-icon: 24px;
 }
 
 @media (min-width: 768px) {

@@ -20,6 +20,8 @@ const idToCard =
 
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
+  const areAllCharatersSelected = () =>
+    state.selectedCharacters.length === characters.length;
   const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
   const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
   const generateTeams = () => {
@@ -29,7 +31,7 @@ const App: Component = () => {
 
   return (
     <>
-      <header class={styles.titleGrid}>
+      <header class={styles.header}>
         <h1 class={styles.title}>Genshin Impact Team Randomizer</h1>
         <a
           class={styles.githubIcon}
@@ -60,6 +62,19 @@ const App: Component = () => {
           </div>
         </div>
         <div class={styles.buttons}>
+          <Button
+            secondary
+            onClick={() =>
+              setState(state => ({
+                ...state,
+                selectedCharacters: areAllCharatersSelected()
+                  ? []
+                  : characters.map(c => c.id),
+              }))
+            }
+          >
+            {areAllCharatersSelected() ? 'Deselect' : 'Select'} all
+          </Button>
           <Button onClick={generateTeams}>Generate teams</Button>
         </div>
         <div class={`${styles.grid} ${styles.mainGrid}`}>

@@ -1,12 +1,25 @@
-import { JSX, ParentComponent } from 'solid-js';
+import { JSX, ParentComponent, splitProps } from 'solid-js';
 
 import styles from './Button.module.css';
 
+interface IButton {
+  secondary?: boolean;
+}
+
 const Button: ParentComponent<
-  JSX.ButtonHTMLAttributes<HTMLButtonElement>
+  IButton & JSX.ButtonHTMLAttributes<HTMLButtonElement>
 > = props => {
+  const [local, others] = splitProps(props, ['secondary']);
+
   return (
-    <button class={styles.button} onClick={props.onClick}>
+    <button
+      {...others}
+      class={
+        local.secondary
+          ? `${styles.button} ${styles.secondaryButton}`
+          : styles.button
+      }
+    >
       {props.children}
     </button>
   );

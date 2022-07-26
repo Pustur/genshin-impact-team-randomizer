@@ -15,3 +15,18 @@
   outline: 2px solid var(--color-button-bg);
   outline-offset: 3px;
 }
+
+.secondaryButton {
+  background-color: var(--color-button-secondary-bg);
+  border-color: var(--color-button-secondary-border);
+  color: var(--color-button-secondary-fg);
+}
+
+.secondaryButton:active {
+  background-color: var(--color-button-secondary-bg);
+  border-color: var(--color-button-secondary-border);
+}
+
+.secondaryButton:focus-visible {
+  outline-color: var(--color-button-secondary-bg);
+}
