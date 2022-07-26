@@ -29,7 +29,7 @@ const App: Component = () => {
 
   return (
     <>
-      <header class={styles.titleGrid}>
+      <header class={styles.header}>
         <h1 class={styles.title}>Genshin Impact Team Randomizer</h1>
         <a
           class={styles.githubIcon}

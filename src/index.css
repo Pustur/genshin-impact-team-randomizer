@@ -38,6 +38,7 @@
   --size-element: 12px;
   --size-font: 10px;
   --size-card-min-width: 64px;
+  --size-header-icon: 24px;
 }
 
 @media (min-width: 768px) {

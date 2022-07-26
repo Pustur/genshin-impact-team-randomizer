@@ -3,9 +3,15 @@
   margin-top: 1rem;
 }
 
-.titleGrid {
+.header {
+  --size-half-header-icon: calc(var(--size-header-icon) / 2);
+  --size-external-col: calc(
+    var(--size-half-header-icon) + var(--size-header-icon)
+  );
+
   display: grid;
-  grid-template-columns: calc(12px + 24px) 1fr calc(12px + 24px);
+  gap: var(--size-half-header-icon);
+  grid-template-columns: var(--size-external-col) 1fr var(--size-external-col);
   align-items: center;
 }
 
