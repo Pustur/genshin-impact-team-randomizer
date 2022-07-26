@@ -317,6 +317,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 51,
+    fullName: 'Shikanoin Heizou',
+    shortName: 'Heizou',
+    stars: 4,
+    elements: ['anemo'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 36,
     fullName: 'Sucrose',
     shortName: 'Sucrose',
