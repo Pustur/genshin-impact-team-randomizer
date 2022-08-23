@@ -4,7 +4,7 @@ import styles from './App.module.css';
 import { Card } from '../Card';
 import { Button } from '../Button';
 import { characters } from '../../data/characters';
-import { state, setState } from '../../data/store';
+import { selectedCharacters, setSelectedCharacters } from '../../data/store';
 import { GenshinCharacter } from '../../types/types';
 import { shuffle } from '../../utils/utils';
 
@@ -21,11 +21,11 @@ const idToCard =
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
   const areAllCharatersSelected = () =>
-    state.selectedCharacters.length === characters.length;
+    selectedCharacters.selectedCharacters.length === characters.length;
   const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
   const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
   const generateTeams = () => {
-    const rnd = shuffle(Array.from(state.selectedCharacters));
+    const rnd = shuffle(Array.from(selectedCharacters.selectedCharacters));
     setTeams(() => rnd.slice(0, 8));
   };
 
@@ -65,7 +65,7 @@ const App: Component = () => {
           <Button
             secondary
             onClick={() =>
-              setState(state => ({
+              setSelectedCharacters(state => ({
                 ...state,
                 selectedCharacters: areAllCharatersSelected()
                   ? []
@@ -82,7 +82,7 @@ const App: Component = () => {
             {character => (
               <Card
                 onClick={() => {
-                  setState(state => {
+                  setSelectedCharacters(state => {
                     if (state.selectedCharacters.includes(character.id)) {
                       return {
                         ...state,
