@@ -375,7 +375,7 @@ export const characters: GenshinCharacter[] = [
     fullName: 'Traveler',
     shortName: 'Traveler',
     stars: 5,
-    elements: ['anemo', 'geo', 'electro'],
+    elements: ['anemo', 'geo', 'electro', 'dendro'],
     selected: true,
     collab: false,
   },
