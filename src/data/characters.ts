@@ -101,6 +101,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 54,
+    fullName: 'Dori',
+    shortName: 'Dori',
+    stars: 4,
+    elements: ['electro'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 11,
     fullName: 'Eula',
     shortName: 'Eula',
