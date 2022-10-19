@@ -6,7 +6,8 @@
   gap: 2rem;
 }
 
-.filterElements {
+.filterElements,
+.filterRarity {
   display: flex;
   gap: 4px;
 }
@@ -54,6 +55,16 @@
 
 .label.pyro {
   background-image: url(/img/elements/pyro.svg);
+}
+
+.label.stars4 {
+  background-image: url(/img/icons/star-4.svg);
+  background-size: 24px;
+}
+
+.label.stars5 {
+  background-image: url(/img/icons/star-5.svg);
+  background-size: 24px;
 }
 
 .label:hover,

@@ -1,8 +1,8 @@
 import styles from './Filters.module.css';
 
 import { Component } from 'solid-js';
-import { setFilterElements } from '../../data/store';
-import { elementNames } from '../../utils/const';
+import { setFilterElements, setFilterRarity } from '../../data/store';
+import { elementNames, rarities } from '../../utils/const';
 
 const Filters: Component = () => {
   return (
@@ -28,6 +28,36 @@ const Filters: Component = () => {
               />
               <label class={`${styles[element]} ${styles.label}`} for={id}>
                 {element}
+              </label>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class={styles.filterRarity}>
+        {rarities.map(rarity => {
+          return (
+            <div>
+              <input
+                id={`filter-rarity-${rarity}`}
+                class={`${styles.checkbox} sr-only`}
+                type="checkbox"
+                value={rarity}
+                onChange={e => {
+                  const { value, checked } = e.currentTarget;
+
+                  if (!checked) {
+                    setFilterRarity(prev =>
+                      prev.filter(v => v !== Number(value)),
+                    );
+                  } else setFilterRarity(prev => prev.concat(Number(value)));
+                }}
+              />
+              <label
+                class={`${styles[`stars${rarity}`]} ${styles.label}`}
+                for={`filter-rarity-${rarity}`}
+              >
+                {rarity} Stars
               </label>
             </div>
           );

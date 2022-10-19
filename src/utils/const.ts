@@ -8,4 +8,6 @@ const elementNames = [
   'pyro',
 ];
 
-export { elementNames };
+const rarities = [4, 5];
+
+export { elementNames, rarities };

@@ -8,6 +8,7 @@ import { Filters } from '../Filters';
 import { characters } from '../../data/characters';
 import {
   filterElements,
+  filterRarity,
   selectedCharacters,
   setSelectedCharacters,
 } from '../../data/store';
@@ -90,10 +91,12 @@ const App: Component = () => {
           <For
             each={characters.filter(
               character =>
-                filterElements.length === 0 ||
-                filterElements.some(elem =>
-                  character.elements.includes(elem as GenshinElement),
-                ),
+                (filterElements.length === 0 ||
+                  filterElements.some(elem =>
+                    character.elements.includes(elem as GenshinElement),
+                  )) &&
+                (filterRarity.length === 0 ||
+                  filterRarity.includes(character.stars)),
             )}
           >
             {character => (

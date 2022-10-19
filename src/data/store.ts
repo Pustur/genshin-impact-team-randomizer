@@ -8,6 +8,8 @@ const preselectedCharacters: GenshinCharacter['id'][] = [
 
 const [filterElements, setFilterElements] = createStore<string[]>([]);
 
+const [filterRarity, setFilterRarity] = createStore<number[]>([]);
+
 const [selectedCharacters, setSelectedCharacters] = createLocalStore(
   'selectedCharacters',
   {
@@ -20,4 +22,6 @@ export {
   setSelectedCharacters,
   filterElements,
   setFilterElements,
+  filterRarity,
+  setFilterRarity,
 };
