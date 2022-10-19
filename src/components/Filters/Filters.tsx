@@ -7,14 +7,15 @@ import { elementNames } from '../../utils/const';
 const Filters: Component = () => {
   return (
     <div class={styles.filters}>
-      <div class="filter elements">
+      <div class={styles.filterElements}>
         {elementNames.map(element => {
-          const id = `element-${element}`;
+          const id = `filter-element-${element}`;
 
           return (
-            <div class="field element">
+            <div>
               <input
                 id={id}
+                class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={element}
                 onChange={e => {
@@ -25,7 +26,9 @@ const Filters: Component = () => {
                   } else setFilterElements(prev => prev.concat(value));
                 }}
               />
-              <label for={id}>{element}</label>
+              <label class={`${styles[element]} ${styles.label}`} for={id}>
+                {element}
+              </label>
             </div>
           );
         })}

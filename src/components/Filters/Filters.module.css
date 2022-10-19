@@ -1,3 +1,71 @@
 .filters {
   margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.filterElements {
+  display: flex;
+  gap: 4px;
+}
+
+.label {
+  text-indent: 200%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-size: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid var(--color-border);
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.label.anemo {
+  background-image: url(/img/elements/anemo.svg);
+}
+
+.label.cryo {
+  background-image: url(/img/elements/cryo.svg);
+}
+
+.label.dendro {
+  background-image: url(/img/elements/dendro.svg);
+}
+
+.label.electro {
+  background-image: url(/img/elements/electro.svg);
+}
+
+.label.geo {
+  background-image: url(/img/elements/geo.svg);
+}
+
+.label.hydro {
+  background-image: url(/img/elements/hydro.svg);
+}
+
+.label.pyro {
+  background-image: url(/img/elements/pyro.svg);
+}
+
+.label:hover,
+.checkbox:checked + .label {
+  background-color: var(--color-border);
+}
+
+.checkbox:checked + .label {
+  opacity: 1;
+}
+
+.checkbox:focus-visible + .label {
+  outline: 2px solid white;
+  outline-offset: 3px;
 }

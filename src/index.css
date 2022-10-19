@@ -10,6 +10,7 @@
   --color-fg: #b9c6df;
   --color-bg: #1a1f33;
   --color-bg-dark: #080c1b;
+  --color-border: #2d3861;
   --color-5-star-start: #83471b;
   --color-5-star-end: #ab5c10;
   --color-4-star-start: #4d4280;
@@ -98,6 +99,7 @@ html {
   font-size: var(--size-font);
   font-family: HYWenHei, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-y: scroll;
 }
 
 body {
@@ -114,4 +116,16 @@ img {
 button {
   all: unset;
   cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
