@@ -1,9 +1,12 @@
 import { createLocalStore } from '../utils/utils';
 import { GenshinCharacter } from '../types/types';
+import { createStore } from 'solid-js/store';
 
 const preselectedCharacters: GenshinCharacter['id'][] = [
   4, 5, 18, 25, 41, 39, 28,
 ];
+
+const [filterElements, setFilterElements] = createStore<string[]>([]);
 
 const [selectedCharacters, setSelectedCharacters] = createLocalStore(
   'selectedCharacters',
@@ -12,4 +15,9 @@ const [selectedCharacters, setSelectedCharacters] = createLocalStore(
   },
 );
 
-export { selectedCharacters, setSelectedCharacters };
+export {
+  selectedCharacters,
+  setSelectedCharacters,
+  filterElements,
+  setFilterElements,
+};
