@@ -272,6 +272,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 59,
+    fullName: 'Nahida',
+    shortName: 'Nahida',
+    stars: 5,
+    elements: ['dendro'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 27,
     fullName: 'Ningguang',
     shortName: 'Ningguang',
