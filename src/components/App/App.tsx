@@ -3,9 +3,16 @@ import styles from './App.module.css';
 
 import { Card } from '../Card';
 import { Button } from '../Button';
+import { Container } from '../Container';
+import { Filters } from '../Filters';
 import { characters } from '../../data/characters';
-import { selectedCharacters, setSelectedCharacters } from '../../data/store';
-import { GenshinCharacter } from '../../types/types';
+import {
+  filterElements,
+  filterRarity,
+  selectedCharacters,
+  setSelectedCharacters,
+} from '../../data/store';
+import { GenshinCharacter, GenshinElement } from '../../types/types';
 import { shuffle } from '../../utils/utils';
 
 const idToCard =
@@ -77,8 +84,21 @@ const App: Component = () => {
           </Button>
           <Button onClick={generateTeams}>Generate teams</Button>
         </div>
+        <Container>
+          <Filters />
+        </Container>
         <div class={`${styles.grid} ${styles.mainGrid}`}>
-          <For each={characters}>
+          <For
+            each={characters.filter(
+              character =>
+                (filterElements.length === 0 ||
+                  filterElements.some(elem =>
+                    character.elements.includes(elem as GenshinElement),
+                  )) &&
+                (filterRarity.length === 0 ||
+                  filterRarity.includes(character.stars)),
+            )}
+          >
             {character => (
               <Card
                 onClick={() => {
