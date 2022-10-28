@@ -26,7 +26,11 @@ const Filters: Component = () => {
                   } else setFilterElements(prev => prev.concat(value));
                 }}
               />
-              <label class={`${styles[element]} ${styles.label}`} for={id}>
+              <label
+                class={`${styles[element]} ${styles.label}`}
+                for={id}
+                title={element}
+              >
                 {element}
               </label>
             </div>
@@ -56,6 +60,7 @@ const Filters: Component = () => {
               <label
                 class={`${styles[`stars${rarity}`]} ${styles.label}`}
                 for={`filter-rarity-${rarity}`}
+                title={`${rarity} stars`}
               >
                 {rarity} Stars
               </label>
