@@ -254,6 +254,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 58,
+    fullName: 'Layla',
+    shortName: 'Layla',
+    stars: 4,
+    elements: ['cryo'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 25,
     fullName: 'Lisa',
     shortName: 'Lisa',
