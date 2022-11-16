@@ -4,25 +4,33 @@
 }
 
 .header {
-  --size-half-header-icon: calc(var(--size-header-icon) / 2);
-  --size-external-col: calc(
-    var(--size-half-header-icon) + var(--size-header-icon)
-  );
-
-  display: grid;
-  gap: var(--size-half-header-icon);
-  grid-template-columns: var(--size-external-col) 1fr var(--size-external-col);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+.header > * + * {
+  margin-left: 0.8rem;
+  border-left: 1px solid var(--color-fg);
+  padding-left: 0.8rem;
+}
+
+.try::after {
+  content: 'Try!';
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-fg);
+  border-radius: 100vmax;
+  margin-left: 0.3em;
+  font-size: 80%;
 }
 
 .title {
   grid-column: 2;
+  padding-inline: 1em;
   text-align: center;
   font-weight: 400;
-}
-
-.githubIconPath {
-  fill: var(--color-fg);
 }
 
 .teams {
