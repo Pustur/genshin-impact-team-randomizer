@@ -1,6 +1,6 @@
 {
   "name": "genshin-impact-team-randomizer",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A web app to randomize your Genshin Impact team based on the characters that you own",
   "files": [
     "dist"
