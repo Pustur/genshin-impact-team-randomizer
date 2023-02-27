@@ -110,6 +110,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 64,
+    fullName: 'Dehya',
+    shortName: 'Dehya',
+    stars: 5,
+    elements: ['pyro'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 9,
     fullName: 'Diluc',
     shortName: 'Diluc',
