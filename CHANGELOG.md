@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.5] - 2023-03-20
+
+### Added
+
+- New character: Mika
+
 ## [1.2.4] - 2023-02-27
 
 ### Added
@@ -95,6 +101,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
+[1.2.5]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.4...1.2.5
 [1.2.4]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.1...1.2.2
