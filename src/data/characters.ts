@@ -272,6 +272,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 68,
+    fullName: 'Kirara',
+    shortName: 'Kirara',
+    stars: 4,
+    elements: ['dendro'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 22,
     fullName: 'Klee',
     shortName: 'Klee',
