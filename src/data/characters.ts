@@ -182,6 +182,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 71,
+    fullName: 'Freminet',
+    shortName: 'Freminet',
+    stars: 4,
+    elements: ['cryo'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 13,
     fullName: 'Ganyu',
     shortName: 'Ganyu',
