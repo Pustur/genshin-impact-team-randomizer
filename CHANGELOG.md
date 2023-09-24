@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.11] - 2023-09-26
+
+### Added
+
+- New character: Neuvillette
+
 ## [1.2.10] - 2023-09-04
 
 ### Added
@@ -139,6 +145,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
+[1.2.11]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.10...1.2.11
 [1.2.10]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.9...1.2.10
 [1.2.9]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.8...1.2.9
 [1.2.8]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.7...1.2.8
