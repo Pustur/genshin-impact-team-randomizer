@@ -380,6 +380,15 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 72,
+    fullName: 'Neuvillette',
+    shortName: 'Neuvillette',
+    stars: 5,
+    elements: ['hydro'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 27,
     fullName: 'Ningguang',
     shortName: 'Ningguang',
