@@ -80,7 +80,7 @@ const DisplayCard: Component<IDisplayCard> = props => {
       <div class={styles.elementsContainer}>
         <img
           class={styles.element}
-          src={`/img/elements/${element()}.svg`}
+          src={`/img/icons/elements/${element()}.svg`}
           alt=""
         />
       </div>
@@ -119,7 +119,7 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
         {props.character.elements.map(element => (
           <img
             class={styles.element}
-            src={`/img/elements/${element}.svg`}
+            src={`/img/icons/elements/${element}.svg`}
             alt=""
           />
         ))}
