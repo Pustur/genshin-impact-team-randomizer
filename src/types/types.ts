@@ -14,6 +14,8 @@ export type GenshinWeapon =
   | 'polearm'
   | 'sword';
 
+export type Gender = 'F' | 'M';
+
 export interface GenshinCharacter {
   id: number;
   fullName: string;
@@ -21,6 +23,7 @@ export interface GenshinCharacter {
   stars: 4 | 5;
   elements: GenshinElement[];
   weapon: GenshinWeapon;
+  gender: Gender[];
   selected: boolean;
   collab: boolean;
 }

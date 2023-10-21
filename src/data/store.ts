@@ -8,6 +8,8 @@ const [filterElements, setFilterElements] = createStore<string[]>([]);
 
 const [filterWeapons, setFilterWeapons] = createStore<string[]>([]);
 
+const [filterGender, setFilterGender] = createStore<string[]>([]);
+
 const [filterRarity, setFilterRarity] = createStore<number[]>([]);
 
 const [selectedCharacters, setSelectedCharacters] = createLocalStore(
@@ -24,6 +26,8 @@ export {
   setFilterElements,
   filterWeapons,
   setFilterWeapons,
+  filterGender,
+  setFilterGender,
   filterRarity,
   setFilterRarity,
 };

@@ -8,6 +8,7 @@
 
 .filterElements,
 .filterWeapons,
+.filterGender,
 .filterRarity {
   display: flex;
   gap: 4px;
@@ -76,6 +77,14 @@
 
 .label.sword {
   background-image: url(/img/icons/weapons/sword.png);
+}
+
+.label.genderM {
+  background-image: url(/img/icons/genders/male.svg);
+}
+
+.label.genderF {
+  background-image: url(/img/icons/genders/female.svg);
 }
 
 .label.stars4 {

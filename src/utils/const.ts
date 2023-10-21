@@ -10,6 +10,8 @@ const elementNames = [
 
 const weaponNames = ['bow', 'catalyst', 'claymore', 'polearm', 'sword'];
 
+const genders = ['M', 'F'];
+
 const rarities = [4, 5];
 
-export { elementNames, weaponNames, rarities };
+export { elementNames, weaponNames, genders, rarities };

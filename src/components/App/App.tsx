@@ -8,23 +8,24 @@ import { Filters } from '../Filters';
 import { characters } from '../../data/characters';
 import {
   filterElements,
+  filterGender,
   filterRarity,
   filterWeapons,
   selectedCharacters,
   setSelectedCharacters,
 } from '../../data/store';
-import { GenshinCharacter, GenshinElement } from '../../types/types';
+import { Gender, GenshinCharacter, GenshinElement } from '../../types/types';
 import { shuffle } from '../../utils/utils';
 
 const idToCard =
   (offset: number = 0) =>
   (id: GenshinCharacter['id'], index: number) =>
     (
-      <Card
-        index={index + offset}
-        character={characters.find(c => c.id === id)}
-      />
-    );
+    <Card
+      index={index + offset}
+      character={characters.find(c => c.id === id)}
+    />
+  );
 
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
@@ -94,6 +95,10 @@ const App: Component = () => {
                 (filterWeapons.length === 0 ||
                   filterWeapons.some(weap =>
                     character.weapon.includes(weap),
+                  )) &&
+                (filterGender.length === 0 ||
+                  filterGender.some(gender =>
+                    character.gender.includes(gender as Gender),
                   )) &&
                 (filterRarity.length === 0 ||
                   filterRarity.includes(character.stars)),

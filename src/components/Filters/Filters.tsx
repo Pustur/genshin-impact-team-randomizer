@@ -5,8 +5,14 @@ import {
   setFilterElements,
   setFilterWeapons,
   setFilterRarity,
+  setFilterGender,
 } from '../../data/store';
-import { elementNames, weaponNames, rarities } from '../../utils/const';
+import {
+  elementNames,
+  weaponNames,
+  rarities,
+  genders,
+} from '../../utils/const';
 
 const Filters: Component = () => {
   return (
@@ -98,6 +104,37 @@ const Filters: Component = () => {
                 title={`${rarity} stars`}
               >
                 {rarity} Stars
+              </label>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class={styles.filterGender}>
+        {genders.map(gender => {
+          const id = `filter-gender-${gender}`;
+
+          return (
+            <div>
+              <input
+                id={id}
+                class={`${styles.checkbox} sr-only`}
+                type="checkbox"
+                value={gender}
+                onChange={e => {
+                  const { value, checked } = e.currentTarget;
+
+                  if (!checked) {
+                    setFilterGender(prev => prev.filter(v => v !== value));
+                  } else setFilterGender(prev => prev.concat(value));
+                }}
+              />
+              <label
+                class={`${styles[`gender${gender}`]} ${styles.label}`}
+                for={id}
+                title={`gender ${gender}`}
+              >
+                gender {gender}
               </label>
             </div>
           );
