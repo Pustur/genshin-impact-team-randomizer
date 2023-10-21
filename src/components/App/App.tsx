@@ -19,8 +19,7 @@ import { shuffle } from '../../utils/utils';
 
 const idToCard =
   (offset: number = 0) =>
-  (id: GenshinCharacter['id'], index: number) =>
-    (
+  (id: GenshinCharacter['id'], index: number) => (
     <Card
       index={index + offset}
       character={characters.find(c => c.id === id)}

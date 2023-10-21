@@ -28,7 +28,9 @@
   border-radius: var(--size-border-radius);
   cursor: pointer;
   opacity: 0.5;
-  transition: opacity 0.3s, background-color 0.3s;
+  transition:
+    opacity 0.3s,
+    background-color 0.3s;
 }
 
 .label.anemo {
