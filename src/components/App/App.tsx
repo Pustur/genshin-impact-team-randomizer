@@ -84,51 +84,56 @@ const App: Component = () => {
           <Filters />
         </Container>
         <div class={`${styles.grid} ${styles.mainGrid}`}>
-          <For
-            each={characters.filter(
-              character =>
-                (filterElements.length === 0 ||
-                  filterElements.some(elem =>
-                    character.elements.includes(elem as GenshinElement),
-                  )) &&
-                (filterWeapons.length === 0 ||
-                  filterWeapons.some(weap =>
-                    character.weapon.includes(weap),
-                  )) &&
-                (filterGender.length === 0 ||
-                  filterGender.some(gender =>
-                    character.gender.includes(gender as Gender),
-                  )) &&
-                (filterRarity.length === 0 ||
-                  filterRarity.includes(character.stars)),
-            )}
-          >
-            {character => (
-              <Card
-                onClick={() => {
-                  setSelectedCharacters(state => {
-                    if (state.selectedCharacters.includes(character.id)) {
+          <For each={characters}>
+            {character => {
+              const isSameElement = () =>
+                filterElements.length === 0 ||
+                filterElements.some(e =>
+                  character.elements.includes(e as GenshinElement),
+                );
+              const isSameWeapon = () =>
+                filterWeapons.length === 0 ||
+                filterWeapons.some(w => character.weapon.includes(w));
+              const isSameGender = () =>
+                filterGender.length === 0 ||
+                filterGender.some(g => character.gender.includes(g as Gender));
+              const isSameRarity = () =>
+                filterRarity.length === 0 ||
+                filterRarity.includes(character.stars);
+              const isShown = () =>
+                isSameElement() &&
+                isSameWeapon() &&
+                isSameGender() &&
+                isSameRarity();
+
+              return (
+                <Card
+                  classList={{ [styles.hidden]: !isShown() }}
+                  onClick={() => {
+                    setSelectedCharacters(state => {
+                      if (state.selectedCharacters.includes(character.id)) {
+                        return {
+                          ...state,
+                          selectedCharacters: [
+                            ...state.selectedCharacters.filter(
+                              selected => selected !== character.id,
+                            ),
+                          ],
+                        };
+                      }
                       return {
                         ...state,
                         selectedCharacters: [
-                          ...state.selectedCharacters.filter(
-                            selected => selected !== character.id,
-                          ),
+                          ...state.selectedCharacters,
+                          character.id,
                         ],
                       };
-                    }
-                    return {
-                      ...state,
-                      selectedCharacters: [
-                        ...state.selectedCharacters,
-                        character.id,
-                      ],
-                    };
-                  });
-                }}
-                character={character}
-              />
-            )}
+                    });
+                  }}
+                  character={character}
+                />
+              );
+            }}
           </For>
         </div>
       </main>
