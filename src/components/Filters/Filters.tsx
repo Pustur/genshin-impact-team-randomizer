@@ -2,9 +2,13 @@ import styles from './Filters.module.css';
 
 import { Component } from 'solid-js';
 import {
+  filterElements,
   setFilterElements,
+  filterWeapons,
   setFilterWeapons,
+  filterRarity,
   setFilterRarity,
+  filterGender,
   setFilterGender,
 } from '../../data/store';
 import {
@@ -28,10 +32,13 @@ const Filters: Component = () => {
                 class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={element}
-                onChange={e => {
+                checked={filterElements.includes(element)}
+                onClick={e => {
                   const { value, checked } = e.currentTarget;
 
-                  if (!checked) {
+                  if (e.altKey) {
+                    setFilterElements([value]);
+                  } else if (!checked) {
                     setFilterElements(prev => prev.filter(v => v !== value));
                   } else setFilterElements(prev => prev.concat(value));
                 }}
@@ -59,10 +66,13 @@ const Filters: Component = () => {
                 class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={weapon}
-                onChange={e => {
+                checked={filterWeapons.includes(weapon)}
+                onClick={e => {
                   const { value, checked } = e.currentTarget;
 
-                  if (!checked) {
+                  if (e.altKey) {
+                    setFilterWeapons([value]);
+                  } else if (!checked) {
                     setFilterWeapons(prev => prev.filter(v => v !== value));
                   } else setFilterWeapons(prev => prev.concat(value));
                 }}
@@ -90,10 +100,13 @@ const Filters: Component = () => {
                 class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={rarity}
-                onChange={e => {
+                checked={filterRarity.includes(rarity)}
+                onClick={e => {
                   const { value, checked } = e.currentTarget;
 
-                  if (!checked) {
+                  if (e.altKey) {
+                    setFilterRarity([Number(value)]);
+                  } else if (!checked) {
                     setFilterRarity(prev =>
                       prev.filter(v => v !== Number(value)),
                     );
@@ -123,10 +136,13 @@ const Filters: Component = () => {
                 class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={gender}
-                onChange={e => {
+                checked={filterGender.includes(gender)}
+                onClick={e => {
                   const { value, checked } = e.currentTarget;
 
-                  if (!checked) {
+                  if (e.altKey) {
+                    setFilterGender([value]);
+                  } else if (!checked) {
                     setFilterGender(prev => prev.filter(v => v !== value));
                   } else setFilterGender(prev => prev.concat(value));
                 }}
