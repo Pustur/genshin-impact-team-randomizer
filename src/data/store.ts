@@ -6,6 +6,8 @@ const preselectedCharacters = characters.filter(c => c.selected).map(c => c.id);
 
 const [filterElements, setFilterElements] = createStore<string[]>([]);
 
+const [filterWeapons, setFilterWeapons] = createStore<string[]>([]);
+
 const [filterRarity, setFilterRarity] = createStore<number[]>([]);
 
 const [selectedCharacters, setSelectedCharacters] = createLocalStore(
@@ -20,6 +22,8 @@ export {
   setSelectedCharacters,
   filterElements,
   setFilterElements,
+  filterWeapons,
+  setFilterWeapons,
   filterRarity,
   setFilterRarity,
 };

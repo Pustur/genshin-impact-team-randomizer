@@ -7,6 +7,7 @@
 }
 
 .filterElements,
+.filterWeapons,
 .filterRarity {
   display: flex;
   gap: 4px;
@@ -55,6 +56,26 @@
 
 .label.pyro {
   background-image: url(/img/icons/elements/pyro.svg);
+}
+
+.label.bow {
+  background-image: url(/img/icons/weapons/bow.png);
+}
+
+.label.catalyst {
+  background-image: url(/img/icons/weapons/catalyst.png);
+}
+
+.label.claymore {
+  background-image: url(/img/icons/weapons/claymore.png);
+}
+
+.label.polearm {
+  background-image: url(/img/icons/weapons/polearm.png);
+}
+
+.label.sword {
+  background-image: url(/img/icons/weapons/sword.png);
 }
 
 .label.stars4 {

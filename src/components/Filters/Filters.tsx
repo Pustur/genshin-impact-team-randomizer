@@ -1,8 +1,12 @@
 import styles from './Filters.module.css';
 
 import { Component } from 'solid-js';
-import { setFilterElements, setFilterRarity } from '../../data/store';
-import { elementNames, rarities } from '../../utils/const';
+import {
+  setFilterElements,
+  setFilterWeapons,
+  setFilterRarity,
+} from '../../data/store';
+import { elementNames, weaponNames, rarities } from '../../utils/const';
 
 const Filters: Component = () => {
   return (
@@ -32,6 +36,37 @@ const Filters: Component = () => {
                 title={element}
               >
                 {element}
+              </label>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class={styles.filterWeapons}>
+        {weaponNames.map(weapon => {
+          const id = `filter-weapon-${weapon}`;
+
+          return (
+            <div>
+              <input
+                id={id}
+                class={`${styles.checkbox} sr-only`}
+                type="checkbox"
+                value={weapon}
+                onChange={e => {
+                  const { value, checked } = e.currentTarget;
+
+                  if (!checked) {
+                    setFilterWeapons(prev => prev.filter(v => v !== value));
+                  } else setFilterWeapons(prev => prev.concat(value));
+                }}
+              />
+              <label
+                class={`${styles[weapon]} ${styles.label}`}
+                for={id}
+                title={weapon}
+              >
+                {weapon}
               </label>
             </div>
           );

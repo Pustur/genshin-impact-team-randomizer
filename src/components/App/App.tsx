@@ -9,6 +9,7 @@ import { characters } from '../../data/characters';
 import {
   filterElements,
   filterRarity,
+  filterWeapons,
   selectedCharacters,
   setSelectedCharacters,
 } from '../../data/store';
@@ -89,6 +90,10 @@ const App: Component = () => {
                 (filterElements.length === 0 ||
                   filterElements.some(elem =>
                     character.elements.includes(elem as GenshinElement),
+                  )) &&
+                (filterWeapons.length === 0 ||
+                  filterWeapons.some(weap =>
+                    character.weapon.includes(weap),
                   )) &&
                 (filterRarity.length === 0 ||
                   filterRarity.includes(character.stars)),
