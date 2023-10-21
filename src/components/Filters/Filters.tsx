@@ -81,10 +81,12 @@ const Filters: Component = () => {
 
       <div class={styles.filterRarity}>
         {rarities.map(rarity => {
+          const id = `filter-rarity-${rarity}`;
+
           return (
             <div>
               <input
-                id={`filter-rarity-${rarity}`}
+                id={id}
                 class={`${styles.checkbox} sr-only`}
                 type="checkbox"
                 value={rarity}
@@ -100,10 +102,10 @@ const Filters: Component = () => {
               />
               <label
                 class={`${styles[`stars${rarity}`]} ${styles.label}`}
-                for={`filter-rarity-${rarity}`}
+                for={id}
                 title={`${rarity} stars`}
               >
-                {rarity} Stars
+                {rarity} stars
               </label>
             </div>
           );
