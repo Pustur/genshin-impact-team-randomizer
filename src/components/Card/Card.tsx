@@ -15,13 +15,15 @@ interface ICard {
   onClick?: JSX.EventHandler<HTMLButtonElement, MouseEvent>;
   character?: GenshinCharacter;
   index?: number;
+  classList?: JSX.HTMLAttributes<HTMLElement>['classList'];
 }
 
 type IShellCard = Pick<ICard, 'index'>;
 
 type IDisplayCard = ICard & Required<Pick<ICard, 'character'>>;
 
-type IInteractiveCard = Required<Pick<ICard, 'character' | 'onClick'>>;
+type IInteractiveCard = Required<Pick<ICard, 'character' | 'onClick'>> &
+  Pick<ICard, 'classList'>;
 
 const ShellCard: ParentComponent<IShellCard> = props => {
   const [isMounted, setIsMounted] = createSignal(false);
@@ -80,7 +82,7 @@ const DisplayCard: Component<IDisplayCard> = props => {
       <div class={styles.elementsContainer}>
         <img
           class={styles.element}
-          src={`/img/elements/${element()}.svg`}
+          src={`/img/icons/elements/${element()}.svg`}
           alt=""
         />
       </div>
@@ -94,9 +96,12 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
     <button
       class={styles.card}
       classList={{
-        [styles.selected]: selectedCharacters.selectedCharacters.includes(
-          props.character.id,
-        ),
+        ...props.classList,
+        ...{
+          [styles.selected]: selectedCharacters.selectedCharacters.includes(
+            props.character.id,
+          ),
+        },
       }}
       onClick={props.onClick}
       title={props.character.fullName}
@@ -119,7 +124,7 @@ const InteractiveCard: Component<IInteractiveCard> = props => {
         {props.character.elements.map(element => (
           <img
             class={styles.element}
-            src={`/img/elements/${element}.svg`}
+            src={`/img/icons/elements/${element}.svg`}
             alt=""
           />
         ))}
@@ -145,7 +150,11 @@ const Card: Component<ICard> = props => {
     );
   }
   return (
-    <InteractiveCard onClick={props.onClick} character={props.character} />
+    <InteractiveCard
+      classList={props.classList}
+      onClick={props.onClick}
+      character={props.character}
+    />
   );
 };
 

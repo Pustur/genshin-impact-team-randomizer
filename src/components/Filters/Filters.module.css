@@ -7,6 +7,8 @@
 }
 
 .filterElements,
+.filterWeapons,
+.filterGender,
 .filterRarity {
   display: flex;
   gap: 4px;
@@ -26,44 +28,74 @@
   border-radius: var(--size-border-radius);
   cursor: pointer;
   opacity: 0.5;
-  transition: opacity 0.3s, background-color 0.3s;
+  transition:
+    opacity 0.3s,
+    background-color 0.3s;
 }
 
 .label.anemo {
-  background-image: url(/img/elements/anemo.svg);
+  background-image: url(/img/icons/elements/anemo.svg);
 }
 
 .label.cryo {
-  background-image: url(/img/elements/cryo.svg);
+  background-image: url(/img/icons/elements/cryo.svg);
 }
 
 .label.dendro {
-  background-image: url(/img/elements/dendro.svg);
+  background-image: url(/img/icons/elements/dendro.svg);
 }
 
 .label.electro {
-  background-image: url(/img/elements/electro.svg);
+  background-image: url(/img/icons/elements/electro.svg);
 }
 
 .label.geo {
-  background-image: url(/img/elements/geo.svg);
+  background-image: url(/img/icons/elements/geo.svg);
 }
 
 .label.hydro {
-  background-image: url(/img/elements/hydro.svg);
+  background-image: url(/img/icons/elements/hydro.svg);
 }
 
 .label.pyro {
-  background-image: url(/img/elements/pyro.svg);
+  background-image: url(/img/icons/elements/pyro.svg);
+}
+
+.label.bow {
+  background-image: url(/img/icons/weapons/bow.png);
+}
+
+.label.catalyst {
+  background-image: url(/img/icons/weapons/catalyst.png);
+}
+
+.label.claymore {
+  background-image: url(/img/icons/weapons/claymore.png);
+}
+
+.label.polearm {
+  background-image: url(/img/icons/weapons/polearm.png);
+}
+
+.label.sword {
+  background-image: url(/img/icons/weapons/sword.png);
+}
+
+.label.genderM {
+  background-image: url(/img/icons/genders/male.svg);
+}
+
+.label.genderF {
+  background-image: url(/img/icons/genders/female.svg);
 }
 
 .label.stars4 {
-  background-image: url(/img/icons/star-4.svg);
+  background-image: url(/img/icons/rarities/star-4.svg);
   background-size: 24px;
 }
 
 .label.stars5 {
-  background-image: url(/img/icons/star-5.svg);
+  background-image: url(/img/icons/rarities/star-5.svg);
   background-size: 24px;
 }
 

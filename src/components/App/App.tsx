@@ -8,22 +8,23 @@ import { Filters } from '../Filters';
 import { characters } from '../../data/characters';
 import {
   filterElements,
+  filterGender,
   filterRarity,
+  filterWeapons,
   selectedCharacters,
   setSelectedCharacters,
 } from '../../data/store';
-import { GenshinCharacter, GenshinElement } from '../../types/types';
+import { Gender, GenshinCharacter, GenshinElement } from '../../types/types';
 import { shuffle } from '../../utils/utils';
 
 const idToCard =
   (offset: number = 0) =>
-  (id: GenshinCharacter['id'], index: number) =>
-    (
-      <Card
-        index={index + offset}
-        character={characters.find(c => c.id === id)}
-      />
-    );
+  (id: GenshinCharacter['id'], index: number) => (
+    <Card
+      index={index + offset}
+      character={characters.find(c => c.id === id)}
+    />
+  );
 
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
@@ -83,43 +84,56 @@ const App: Component = () => {
           <Filters />
         </Container>
         <div class={`${styles.grid} ${styles.mainGrid}`}>
-          <For
-            each={characters.filter(
-              character =>
-                (filterElements.length === 0 ||
-                  filterElements.some(elem =>
-                    character.elements.includes(elem as GenshinElement),
-                  )) &&
-                (filterRarity.length === 0 ||
-                  filterRarity.includes(character.stars)),
-            )}
-          >
-            {character => (
-              <Card
-                onClick={() => {
-                  setSelectedCharacters(state => {
-                    if (state.selectedCharacters.includes(character.id)) {
+          <For each={characters}>
+            {character => {
+              const isSameElement = () =>
+                filterElements.length === 0 ||
+                filterElements.some(e =>
+                  character.elements.includes(e as GenshinElement),
+                );
+              const isSameWeapon = () =>
+                filterWeapons.length === 0 ||
+                filterWeapons.some(w => character.weapon.includes(w));
+              const isSameGender = () =>
+                filterGender.length === 0 ||
+                filterGender.some(g => character.gender.includes(g as Gender));
+              const isSameRarity = () =>
+                filterRarity.length === 0 ||
+                filterRarity.includes(character.stars);
+              const isShown = () =>
+                isSameElement() &&
+                isSameWeapon() &&
+                isSameGender() &&
+                isSameRarity();
+
+              return (
+                <Card
+                  classList={{ [styles.hidden]: !isShown() }}
+                  onClick={() => {
+                    setSelectedCharacters(state => {
+                      if (state.selectedCharacters.includes(character.id)) {
+                        return {
+                          ...state,
+                          selectedCharacters: [
+                            ...state.selectedCharacters.filter(
+                              selected => selected !== character.id,
+                            ),
+                          ],
+                        };
+                      }
                       return {
                         ...state,
                         selectedCharacters: [
-                          ...state.selectedCharacters.filter(
-                            selected => selected !== character.id,
-                          ),
+                          ...state.selectedCharacters,
+                          character.id,
                         ],
                       };
-                    }
-                    return {
-                      ...state,
-                      selectedCharacters: [
-                        ...state.selectedCharacters,
-                        character.id,
-                      ],
-                    };
-                  });
-                }}
-                character={character}
-              />
-            )}
+                    });
+                  }}
+                  character={character}
+                />
+              );
+            }}
           </For>
         </div>
       </main>

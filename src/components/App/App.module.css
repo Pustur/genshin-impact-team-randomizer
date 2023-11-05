@@ -67,3 +67,7 @@
     grid-template-columns: repeat(auto-fill, min(var(--size-card-min-width)));
   }
 }
+
+.hidden {
+  display: none;
+}
