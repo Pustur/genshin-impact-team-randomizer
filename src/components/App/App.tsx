@@ -44,14 +44,7 @@ const App: Component = () => {
           href="https://github.com/Pustur/genshin-impact-team-randomizer"
           target="_blank"
         >
-          GitHub
-        </a>
-        <a
-          class={styles.try}
-          href="https://spiralabyss.genshinteams.online"
-          target="_blank"
-        >
-          Randomizer with Preset Teams
+          GitHub Repository
         </a>
       </header>
       <main>
