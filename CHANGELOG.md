@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2023-12-18
+
+### Added
+
+- New character: Navia
+
+### Removed
+
+- Link to forked project by @Gottsmillk as its domain has expired (https://spiralabyss.genshinteams.online/)
+
 ## [1.3.0] - 2023-11-05
 
 ### Added
@@ -164,6 +174,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
+[1.3.1]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.12...1.3.0
 [1.2.12]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.11...1.2.12
 [1.2.11]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.2.10...1.2.11
