@@ -15,17 +15,6 @@
   padding-left: 0.8rem;
 }
 
-.try::after {
-  content: 'Try!';
-  display: inline-block;
-  padding: 0.2em 0.4em;
-  background-color: var(--color-badge-bg);
-  color: var(--color-badge-fg);
-  border-radius: 100vmax;
-  margin-left: 0.3em;
-  font-size: 80%;
-}
-
 .title {
   grid-column: 2;
   padding-inline: 1em;
