@@ -7,6 +7,7 @@ import { Container } from '../Container';
 import { Filters } from '../Filters';
 import { characters } from '../../data/characters';
 import {
+  addtionalFilters,
   filterElements,
   filterGender,
   filterRarity,
@@ -26,13 +27,26 @@ const idToCard =
     />
   );
 
+const applyAdditionalFilters = (team: GenshinCharacter['id'][]): void => {
+  if (addtionalFilters.unique) {
+    setSelectedCharacters(state => ({
+      ...state,
+      selectedCharacters: state.selectedCharacters.filter(
+        selected => !team.includes(selected),
+      ),
+    }));
+  }
+};
+
 const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
   const areAllCharatersSelected = () =>
     selectedCharacters.selectedCharacters.length === characters.length;
   const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
   const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
+
   const generateTeams = () => {
+    applyAdditionalFilters(teams());
     const rnd = shuffle(Array.from(selectedCharacters.selectedCharacters));
     setTeams(() => rnd.slice(0, 8));
   };

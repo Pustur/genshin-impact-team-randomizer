@@ -1,6 +1,7 @@
 import { createLocalStore } from '../utils/utils';
 import { createStore } from 'solid-js/store';
 import { characters } from './characters';
+import { AdditionalFilters } from '../types/types';
 
 const preselectedCharacters = characters.filter(c => c.selected).map(c => c.id);
 
@@ -19,6 +20,10 @@ const [selectedCharacters, setSelectedCharacters] = createLocalStore(
   },
 );
 
+const [addtionalFilters, setAddtionalFilters] = createStore<AdditionalFilters>({
+  unique: false,
+});
+
 export {
   selectedCharacters,
   setSelectedCharacters,
@@ -30,4 +35,6 @@ export {
   setFilterGender,
   filterRarity,
   setFilterRarity,
+  addtionalFilters,
+  setAddtionalFilters,
 };
