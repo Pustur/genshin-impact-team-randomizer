@@ -27,7 +27,3 @@ export interface GenshinCharacter {
   selected: boolean;
   collab: boolean;
 }
-
-export interface AdditionalFilters {
-  unique: boolean;
-}

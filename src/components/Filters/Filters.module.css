@@ -98,10 +98,6 @@
   background-image: url(/img/icons/rarities/star-5.svg);
   background-size: 24px;
 }
-.label.additionalFilters {
-  background-image: url(/img/icons/options.svg);
-  background-size: 24px;
-}
 
 .label:hover,
 .checkbox:checked + .label {
