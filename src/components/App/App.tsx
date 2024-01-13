@@ -1,4 +1,4 @@
-import { Component, createSignal, For } from 'solid-js';
+import { Component, createEffect, createSignal, For } from 'solid-js';
 import styles from './App.module.css';
 
 import { Card } from '../Card';
@@ -26,15 +26,71 @@ const idToCard =
     />
   );
 
+/*
+  * This functions creates a 3 dimensional array
+  * [
+    [[], []] // floor 9,
+    [[], []] // floor 10,
+    [[], []] // floor 11,
+    [[], []] // floor 12,
+  ]
+  */
+const makeDisplayTeams = (
+  teams: GenshinCharacter['id'][],
+): GenshinCharacter['id'][][][] => {
+  let _teams: GenshinCharacter['id'][][][] = [];
+
+  for (let i = 0; i < teams.length; i += 8) {
+    _teams.push([]);
+    // i/8 gives the index of current row
+    _teams[i / 8].push(teams.slice(i, i + 4));
+    _teams[i / 8].push(teams.slice(i + 4, i + 8));
+  }
+
+  return _teams;
+};
+
 const App: Component = () => {
-  const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
+  const [teamSize, setTeamSize] = createSignal<number>(8);
+  const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>(
+    Array.from({ length: teamSize() }),
+  );
+  const displayTeams = () => makeDisplayTeams(teams());
+
   const areAllCharatersSelected = () =>
     selectedCharacters.selectedCharacters.length === characters.length;
-  const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
-  const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
+
+  // const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
+  // const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
   const generateTeams = () => {
     const rnd = shuffle(Array.from(selectedCharacters.selectedCharacters));
-    setTeams(() => rnd.slice(0, 8));
+    setTeams(() => rnd.slice(0, teamSize()));
+  };
+
+  // When you add/remove a floor it keep the existing characters selected
+  // const normaliseTeams = () => {
+  //   setTeams(() => {
+  //     let _teams = [...teams()];
+
+  //     if (_teams.length < teamSize()) {
+  //       const arr = _teams.push(
+  //         ...(Array.from({ length: teamSize() - _teams.length }) as any[]),
+  //       );
+  //     } else {
+  //       _teams.splice(teamSize());
+  //     }
+  //     return _teams;
+  //   });
+  // };
+
+  const increaseTeamSize = () => {
+    setTeamSize(() => (teamSize() < 32 ? teamSize() + 8 : 32));
+    setTeams(() => Array.from({ length: teamSize() }) as any[]);
+  };
+
+  const decreaseTeamSize = () => {
+    setTeamSize(() => (teamSize() > 8 ? teamSize() - 8 : 8));
+    setTeams(() => Array.from({ length: teamSize() }) as any[]);
   };
 
   return (
@@ -49,14 +105,24 @@ const App: Component = () => {
       </header>
       <main>
         <h1 class={styles.title}>Genshin Impact Team Randomizer</h1>
-        <div class={styles.teams}>
+        {displayTeams().map((_teams, i) => (
+          <div class={styles.teams}>
+            <div class={`${styles.grid} ${styles.team}`}>
+              {_teams[0].map(idToCard())}
+            </div>
+            <div class={`${styles.grid} ${styles.team}`}>
+              {_teams[1].map(idToCard(4))}
+            </div>
+          </div>
+        ))}
+        {/* <div class={styles.teams}>
           <div class={`${styles.grid} ${styles.team}`}>
             {team1().map(idToCard())}
           </div>
           <div class={`${styles.grid} ${styles.team}`}>
             {team2().map(idToCard(4))}
           </div>
-        </div>
+        </div> */}
         <div class={styles.buttons}>
           <Button
             secondary
@@ -72,6 +138,12 @@ const App: Component = () => {
             {areAllCharatersSelected() ? 'Deselect' : 'Select'} all
           </Button>
           <Button onClick={generateTeams}>Generate teams</Button>
+          {teamSize() != 32 && (
+            <Button onClick={increaseTeamSize}> Add Floor</Button>
+          )}
+          {teamSize() != 8 && (
+            <Button onClick={decreaseTeamSize}>Remove Floor</Button>
+          )}
         </div>
         <Container>
           <Filters />
