@@ -152,7 +152,7 @@ export const characters: GenshinCharacter[] = [
     elements: ['dendro'],
     weapon: 'bow',
     gender: ['F'],
-    selected: false,
+    selected: true,
     collab: false,
   },
   {
