@@ -13,6 +13,8 @@ import {
   filterWeapons,
   selectedCharacters,
   setSelectedCharacters,
+  teamsCount,
+  setTeamsCount,
 } from '../../data/store';
 import { Gender, GenshinCharacter, GenshinElement } from '../../types/types';
 import { shuffle } from '../../utils/utils';
@@ -30,11 +32,21 @@ const App: Component = () => {
   const [teams, setTeams] = createSignal<GenshinCharacter['id'][]>([]);
   const areAllCharatersSelected = () =>
     selectedCharacters.selectedCharacters.length === characters.length;
-  const team1 = () => Array.from({ length: 4 }, (_, i) => teams()[i]);
-  const team2 = () => Array.from({ length: 4 }, (_, i) => teams()[i + 4]);
   const generateTeams = () => {
     const rnd = shuffle(Array.from(selectedCharacters.selectedCharacters));
-    setTeams(() => rnd.slice(0, 8));
+    setTeams(() => rnd.slice(0, teamsCount.teamsCount * 4));
+  };
+  const increaseTeamSize = () => {
+    setTeamsCount(state => ({
+      ...state,
+      teamsCount: Math.min(teamsCount.teamsCount + 2, 8),
+    }));
+  };
+  const decreaseTeamSize = () => {
+    setTeamsCount(state => ({
+      ...state,
+      teamsCount: Math.max(teamsCount.teamsCount - 2, 2),
+    }));
   };
 
   return (
@@ -50,12 +62,18 @@ const App: Component = () => {
       <main>
         <h1 class={styles.title}>Genshin Impact Team Randomizer</h1>
         <div class={styles.teams}>
-          <div class={`${styles.grid} ${styles.team}`}>
-            {team1().map(idToCard())}
-          </div>
-          <div class={`${styles.grid} ${styles.team}`}>
-            {team2().map(idToCard(4))}
-          </div>
+          <For
+            each={Array.from({ length: teamsCount.teamsCount }, (_, i) => i)}
+          >
+            {teamIndex => (
+              <div class={`${styles.grid} ${styles.team}`}>
+                {Array.from(
+                  { length: 4 },
+                  (_, i) => teams()[i + teamIndex * 4],
+                ).map(idToCard((teamIndex % 2) * 4))}
+              </div>
+            )}
+          </For>
         </div>
         <div class={styles.buttons}>
           <Button
@@ -72,6 +90,16 @@ const App: Component = () => {
             {areAllCharatersSelected() ? 'Deselect' : 'Select'} all
           </Button>
           <Button onClick={generateTeams}>Generate teams</Button>
+          {teamsCount.teamsCount < 8 && (
+            <Button secondary onClick={increaseTeamSize}>
+              Add Team
+            </Button>
+          )}
+          {teamsCount.teamsCount > 2 && (
+            <Button secondary onClick={decreaseTeamSize}>
+              Remove Team
+            </Button>
+          )}
         </div>
         <Container>
           <Filters />

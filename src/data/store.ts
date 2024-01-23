@@ -19,6 +19,10 @@ const [selectedCharacters, setSelectedCharacters] = createLocalStore(
   },
 );
 
+const [teamsCount, setTeamsCount] = createLocalStore('teamsCount', {
+  teamsCount: 2,
+});
+
 export {
   selectedCharacters,
   setSelectedCharacters,
@@ -30,4 +34,6 @@ export {
   setFilterGender,
   filterRarity,
   setFilterRarity,
+  teamsCount,
+  setTeamsCount,
 };

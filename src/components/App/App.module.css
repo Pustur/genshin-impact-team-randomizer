@@ -28,11 +28,14 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
