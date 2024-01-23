@@ -14,4 +14,18 @@ const genders = ['M', 'F'];
 
 const rarities = [4, 5];
 
-export { elementNames, weaponNames, genders, rarities };
+const teamSize = 4;
+
+const minTeams = 2;
+
+const maxTeams = 8;
+
+export {
+  elementNames,
+  weaponNames,
+  genders,
+  rarities,
+  teamSize,
+  minTeams,
+  maxTeams,
+};

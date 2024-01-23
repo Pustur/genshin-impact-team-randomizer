@@ -18,6 +18,7 @@ import {
 } from '../../data/store';
 import { Gender, GenshinCharacter, GenshinElement } from '../../types/types';
 import { shuffle } from '../../utils/utils';
+import { teamSize, minTeams, maxTeams } from '../../utils/const';
 
 const idToCard =
   (offset: number = 0) =>
@@ -34,18 +35,18 @@ const App: Component = () => {
     selectedCharacters.selectedCharacters.length === characters.length;
   const generateTeams = () => {
     const rnd = shuffle(Array.from(selectedCharacters.selectedCharacters));
-    setTeams(() => rnd.slice(0, teamsCount.teamsCount * 4));
+    setTeams(() => rnd.slice(0, teamsCount.teamsCount * teamSize));
   };
   const increaseTeamSize = () => {
     setTeamsCount(state => ({
       ...state,
-      teamsCount: Math.min(teamsCount.teamsCount + 2, 8),
+      teamsCount: Math.min(teamsCount.teamsCount + 2, maxTeams),
     }));
   };
   const decreaseTeamSize = () => {
     setTeamsCount(state => ({
       ...state,
-      teamsCount: Math.max(teamsCount.teamsCount - 2, 2),
+      teamsCount: Math.max(teamsCount.teamsCount - 2, minTeams),
     }));
   };
 
@@ -68,9 +69,9 @@ const App: Component = () => {
             {teamIndex => (
               <div class={`${styles.grid} ${styles.team}`}>
                 {Array.from(
-                  { length: 4 },
-                  (_, i) => teams()[i + teamIndex * 4],
-                ).map(idToCard((teamIndex % 2) * 4))}
+                  { length: teamSize },
+                  (_, i) => teams()[i + teamIndex * teamSize],
+                ).map(idToCard((teamIndex % 2) * teamSize))}
               </div>
             )}
           </For>
@@ -90,12 +91,12 @@ const App: Component = () => {
             {areAllCharatersSelected() ? 'Deselect' : 'Select'} all
           </Button>
           <Button onClick={generateTeams}>Generate teams</Button>
-          {teamsCount.teamsCount < 8 && (
+          {teamsCount.teamsCount < maxTeams && (
             <Button secondary onClick={increaseTeamSize}>
               Add Team
             </Button>
           )}
-          {teamsCount.teamsCount > 2 && (
+          {teamsCount.teamsCount > minTeams && (
             <Button secondary onClick={decreaseTeamSize}>
               Remove Team
             </Button>
