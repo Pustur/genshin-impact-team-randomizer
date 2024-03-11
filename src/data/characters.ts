@@ -134,6 +134,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 80,
+    fullName: 'Chiori',
+    shortName: 'Chiori',
+    stars: 5,
+    elements: ['geo'],
+    weapon: 'sword',
+    gender: ['F'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 8,
     fullName: 'Chongyun',
     shortName: 'Chongyun',
