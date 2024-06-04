@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.3] - 2024-06-04
+
+### Added
+
+- New character: Clorinde
+- New character: Sethos
+- New character: Sigewinne
+
+Note: From now on I will release the characters for the whole patch instead of phase 1 and phase 2 separately
+
 ## [1.4.2] - 2024-04-22
 
 ### Added
@@ -204,6 +214,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
+[1.4.3]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.2...1.4.3
 [1.4.2]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.1...1.4.2
 [1.4.1]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.3.2...1.4.0
