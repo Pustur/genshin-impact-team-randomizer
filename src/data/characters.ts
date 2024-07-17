@@ -244,6 +244,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 85,
+    fullName: 'Emilie',
+    shortName: 'Emilie',
+    stars: 5,
+    elements: ['dendro'],
+    weapon: 'polearm',
+    gender: ['F'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 11,
     fullName: 'Eula',
     shortName: 'Eula',
