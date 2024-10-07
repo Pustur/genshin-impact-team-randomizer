@@ -871,6 +871,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 89,
+    fullName: 'Xilonen',
+    shortName: 'Xilonen',
+    stars: 5,
+    elements: ['geo'],
+    weapon: 'sword',
+    gender: ['F'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 43,
     fullName: 'Xingqiu',
     shortName: 'Xingqiu',
