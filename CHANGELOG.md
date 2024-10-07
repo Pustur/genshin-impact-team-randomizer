@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.6] - 2024-10-07
+
+### Added
+
+- New character: Xilonen
+
 ## [1.4.5] - 2024-08-26
 
 ### Added
@@ -228,6 +234,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 - Initial release
 
+[1.4.6]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.5...1.4.6
 [1.4.5]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.4...1.4.5
 [1.4.4]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.3...1.4.4
 [1.4.3]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.2...1.4.3
