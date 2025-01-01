@@ -77,6 +77,10 @@
   filter: drop-shadow(0 0 4px var(--color-element));
 }
 
+.element:nth-child(n + 2) {
+  margin-left: -0.25rem;
+}
+
 .element[src*='anemo'] {
   --color-element: var(--color-anemo);
 }
