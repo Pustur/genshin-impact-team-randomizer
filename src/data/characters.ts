@@ -25,8 +25,8 @@ export const characters: GenshinCharacter[] = [
   },
   {
     id: 62,
-    fullName: 'Alhatham',
-    shortName: 'Alhatham',
+    fullName: 'Alhaitham',
+    shortName: 'Alhaitham',
     stars: 5,
     elements: ['dendro'],
     weapon: 'sword',
