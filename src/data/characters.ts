@@ -227,7 +227,7 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Dahlia',
     stars: 4,
     elements: ['hydro'],
-    weapon: 'catalyst',
+    weapon: 'sword',
     gender: ['M'],
     selected: false,
     collab: false,
