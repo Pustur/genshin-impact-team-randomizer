@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Typo Alhatham -> Alhaitham
+- Typo Alhatham -> Alhaitham [#8](https://github.com/Pustur/genshin-impact-team-randomizer/issues/8)
 
 ## [1.4.11] - 2025-05-05
 
@@ -120,7 +120,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 ### Removed
 
-- Link to forked project by @Gottsmillk as its domain has expired (https://spiralabyss.genshinteams.online/)
+- Link to forked project by @Gottsmillk as its domain has expired [#6](https://github.com/Pustur/genshin-impact-team-randomizer/issues/6) (https://spiralabyss.genshinteams.online/)
 
 ## [1.3.0] - 2023-11-05
 
