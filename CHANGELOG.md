@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.13] - 2025-07-28
+
+### Added
+
+- New character: Ineffa
+
+### Fixed
+
+- Dahlia weapon from catalyst to sword [#9](https://github.com/Pustur/genshin-impact-team-randomizer/issues/9)
+
 ## [1.4.12] - 2025-06-16
 
 ### Added
@@ -14,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Typo Alhatham -> Alhaitham
+- Typo Alhatham -> Alhaitham [#8](https://github.com/Pustur/genshin-impact-team-randomizer/issues/8)
 
 ## [1.4.11] - 2025-05-05
 
@@ -120,7 +130,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 ### Removed
 
-- Link to forked project by @Gottsmillk as its domain has expired (https://spiralabyss.genshinteams.online/)
+- Link to forked project by @Gottsmillk as its domain has expired [#6](https://github.com/Pustur/genshin-impact-team-randomizer/issues/6) (https://spiralabyss.genshinteams.online/)
 
 ## [1.3.0] - 2023-11-05
 
@@ -281,6 +291,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 - Initial release
 
+[1.4.13]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.12...1.4.13
 [1.4.12]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.11...1.4.12
 [1.4.11]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.10...1.4.11
 [1.4.10]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.9...1.4.10
