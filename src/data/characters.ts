@@ -420,6 +420,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 102,
+    fullName: 'Ineffa',
+    shortName: 'Ineffa',
+    stars: 5,
+    elements: ['electro'],
+    weapon: 'polearm',
+    gender: ['F'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 16,
     fullName: 'Jean',
     shortName: 'Jean',
