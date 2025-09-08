@@ -2,6 +2,17 @@ import { GenshinCharacter } from '../types/types';
 
 export const characters: GenshinCharacter[] = [
   {
+    id: 103,
+    fullName: 'Aino',
+    shortName: 'Aino',
+    stars: 4,
+    elements: ['hydro'],
+    weapon: 'claymore',
+    gender: ['F'],
+    selected: true,
+    collab: false,
+  },
+  {
     id: 1,
     fullName: 'Arataki Itto',
     shortName: 'Itto',
@@ -332,6 +343,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 105,
+    fullName: 'Flins',
+    shortName: 'Flins',
+    stars: 5,
+    elements: ['electro'],
+    weapon: 'polearm',
+    gender: ['M'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 71,
     fullName: 'Freminet',
     shortName: 'Freminet',
@@ -579,6 +601,17 @@ export const characters: GenshinCharacter[] = [
     shortName: 'Lanyan',
     stars: 4,
     elements: ['anemo'],
+    weapon: 'catalyst',
+    gender: ['F'],
+    selected: false,
+    collab: false,
+  },
+  {
+    id: 104,
+    fullName: 'Lauma',
+    shortName: 'Lauma',
+    stars: 5,
+    elements: ['dendro'],
     weapon: 'catalyst',
     gender: ['F'],
     selected: false,
