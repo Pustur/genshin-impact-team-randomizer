@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New character: Flins
 - New character: Lauma
 
+### Fixed
+
+- Itto / Ningguang alphabetic sorting
+
 ## [1.4.13] - 2025-07-28
 
 ### Added
