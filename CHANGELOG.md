@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.15] - 2025-10-20
+
+### Added
+
+- New character: Nefer
+
 ## [1.4.14] - 2025-09-09
 
 ### Added
@@ -12,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New character: Aino
 - New character: Flins
 - New character: Lauma
+
+### Fixed
+
+- Itto / Ningguang alphabetic sorting
 
 ## [1.4.13] - 2025-07-28
 
@@ -299,6 +309,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 - Initial release
 
+[1.4.15]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.14...1.4.15
 [1.4.14]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.13...1.4.14
 [1.4.13]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.12...1.4.13
 [1.4.12]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.11...1.4.12
