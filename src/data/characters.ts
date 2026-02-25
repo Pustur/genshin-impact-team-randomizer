@@ -1036,6 +1036,17 @@ export const characters: GenshinCharacter[] = [
     collab: false,
   },
   {
+    id: 112,
+    fullName: 'Varka',
+    shortName: 'Varka',
+    stars: 5,
+    elements: ['anemo'],
+    weapon: 'claymore',
+    gender: ['M'],
+    selected: false,
+    collab: false,
+  },
+  {
     id: 40,
     fullName: 'Venti',
     shortName: 'Venti',
