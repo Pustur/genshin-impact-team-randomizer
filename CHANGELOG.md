@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.18] - 2026-02-25
+
+### Added
+
+- New character: Varka
 ## [1.4.17] - 2026-01-13
 
 ### Added
@@ -324,6 +329,7 @@ Note: From now on I will release the characters for the whole patch instead of p
 
 - Initial release
 
+[1.4.18]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.17...1.4.18
 [1.4.17]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.16...1.4.17
 [1.4.16]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.15...1.4.16
 [1.4.15]: https://github.com/Pustur/genshin-impact-team-randomizer/compare/1.4.14...1.4.15
