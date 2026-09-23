@@ -53,7 +53,7 @@ export const characters: GenshinCharacter[] = [
     elements: ['electro'],
     weapon: 'polearm',
     gender: ['M'],
-    selected: false,
+    selected: true,
     collab: false,
   },
   {
